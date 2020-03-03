@@ -3,6 +3,8 @@ package hn.edu.ujcv.progra;
 public class OMat2x2 {
 
     // miembros
+    private OVecR2 col1;
+    private OVecR2 col2;
 
 
     // accesoras y mutadoras
