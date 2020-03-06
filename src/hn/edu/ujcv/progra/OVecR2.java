@@ -34,7 +34,7 @@ public class OVecR2 {
     public double prodPunto(OVecR2 b){
         //TODO: implementar
 
-        return this.y * b.y + this.x + b.x;
+        return this.y * b.y + this.x * b.x;
     }
 
     public double magnitud(){
@@ -48,7 +48,7 @@ public class OVecR2 {
 
     public OVecR2(OVecR2 a){
         this.x = a.x;
-        this.x = a.x;}
+        this.y = a.y;}
 
     public OVecR2(double x, double y){}
 }
