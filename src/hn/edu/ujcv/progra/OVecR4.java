@@ -42,17 +42,17 @@ public class OVecR4 {
 
     public OVecR4 resta(OVecR4 b){
         //TODO: implementar
-        return new OVecR4();
+        return new OVecR4(this.a - b.a, this.a2 - b.a2, this.b - b.b, this.b2 - b.b2);
     }
 
     public double prodPunto(OVecR4 b){
         //TODO: implementar
-        return 0.0f;
+        return this.a * b.a + this.a2*b.a2 + this.b * b.b + this.b2 * b.b2;
     }
 
     public double magnitud(){
         //TODO: implementar
-        return 0.0f;
+        return Math.sqrt(this.a * this.a +this.a2 * this.a2+ this.b * this.b + this.b2 * this.b2);
     }
 
     // constructores
