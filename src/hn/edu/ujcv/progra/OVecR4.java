@@ -37,7 +37,7 @@ public class OVecR4 {
 
     public OVecR4 suma(OVecR4 b){
         //TODO: implementar
-        return new OVecR4();
+        return new OVecR4(this.a + b.a, this.a2 + b.a2, this.b + b.b, this.b2 + b.b2);
     }
 
     public OVecR4 resta(OVecR4 b){
@@ -56,4 +56,16 @@ public class OVecR4 {
     }
 
     // constructores
+    public OVecR4() { }
+
+    public OVecR4 (OVecR4 s){
+        this.a = s.a;
+        this.a = s.a2;
+        this.b = s.b;
+        this.b2 = s.b2;
+    }
+
+    public OVecR4(double a, double a2, double b, double b2){}
 }
+
+
