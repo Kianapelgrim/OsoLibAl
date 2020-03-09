@@ -48,7 +48,7 @@ public class OVecR3 {
         //                 j = - ();
         //                 k = ;
         //
-        return new OVecR3( );
+        return new OVecR3(this.b* b.b2 - this.b2*b.b, -this.a* -b.b2 + this.b2 * -b.a, this.a*b.b-this.b*b.a );
     }
 
     public double prodPunto(OVecR3 b){
