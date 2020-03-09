@@ -4,8 +4,35 @@ public class OVecR4 {
     // miembros
 
 
-    // accesoras y mutadoras
+    private double b;
+    private double a;
+    private double b2;
+    private double a2;
 
+    // accesoras y mutadoras
+    public double getA () {return a;}
+    public double getA2 () {return a2;}
+
+    public double getB () {
+        return b;
+    }
+    public double getB2 () {
+        return b2;
+    }
+    public void setA( double a){
+        this.a = a;
+    }
+    public void setA2( double a2){
+        this.a2 = a2;
+    }
+    public void setB(double b) {
+        this.b = b;
+    }
+
+
+    public void setB2( double b2) {
+        this.b2 = b2;
+    }
     // metodos
 
     public OVecR4 suma(OVecR4 b){
