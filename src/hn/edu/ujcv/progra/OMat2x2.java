@@ -8,6 +8,8 @@ public class OMat2x2 {
 private OVecR2 col1;
 private OVecR2 col2;
 
+
+
     // accesoras y mutadoras
     //getFilaX
     //getColY
@@ -40,16 +42,18 @@ private OVecR2 col2;
 
     public OMat2x2 transpuesta(){
         //TODO: implementar
-        return new OMat2x2();
+        return new OMat2x2(col1.getX(), col2.getX(), col1.getY(), col2.getY());
     }
 
     public OMat2x2 inversa(){
         //TODO: implementar
-        return new OMat2x2();
+        OVecR2 col1I = new OVecR2(1,0);
+        OVecR2 col2I = new OVecR2(0,1);
+        return  new OMat2x2(col1I , col2I);
     }
     public OMat2x2 suma(OMat2x2 b){
         //TODO: implementar
-        return new OMat2x2();
+        return new OMat2x2(col1.suma(b.col1) , col2.suma(b.col2));
     }
 
     public OMat2x2 resta(OMat2x2 b){
@@ -88,6 +92,11 @@ private OVecR2 col2;
     public OMat2x2(double m11, double m12,
         double m21, double m22){}
 
+
+
     public OMat2x2(OVecR2 a, OVecR2 b, boolean esColumna){}
+    public OMat2x2( OVecR2 col1, OVecR2 col2) {
+    }
+
 
 }
