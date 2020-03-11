@@ -2,9 +2,34 @@ package hn.edu.ujcv.progra;
 
 public class OMat4x4 {
     // miembros
-
-
+    private OVecR2 col1;
+    private OVecR2 col2;
+    private OVecR2 col3;
+    private OVecR2 col4;
     // accesoras y mutadoras
+
+        public OVecR2 getFila1(){
+            return new OVecR2(col1.getX(),col2.getX());
+        }
+        public void setCol1(OVecR2 b){
+            col1 = new OVecR2(b);
+        }
+        public void setFila1(OVecR2 fila){
+            col1.setX(fila.getX());
+            col2.setX(fila.getY());
+        }
+        public OVecR2 getColumna2(){
+            return col2;
+        }
+        public OVecR2 getFila2(){
+            return new OVecR2(col1.getY(),col2.getY());
+        }
+
+        public void setCol2(OVecR2 col2) {
+
+            this.col2 = new OVecR2(col2);
+            // metodos
+        }
 
     // metodos
 
