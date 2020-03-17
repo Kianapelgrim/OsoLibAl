@@ -104,26 +104,28 @@ public class OMat3x3 {
     public static OMat3x3 rotX(double alpha){
 
 
-        return new OMat3x3();
+        return new OMat3x3(1,0,0,0,Math.cos(alpha), -Math.sin(alpha),
+                0,Math.sin(alpha), Math.cos(alpha));
     }
 
     public static OMat3x3 rotY(double alpha){
 
 
-        return new OMat3x3();
+        return new OMat3x3(Math.cos(alpha), 0 , Math.sin(alpha),
+                0,1,0, -Math.sin(alpha), 0 , Math.cos(alpha));
     }
 
     public static OMat3x3 rotZ(double alpha){
 
 
-        return new OMat3x3();
+        return new OMat3x3(Math.cos(alpha), -Math.sin(alpha),0 ,Math.sin(alpha), Math.cos(alpha),0 ,0 ,0,1);
     }
 
     public static OMat3x3 identidad(){
 
 
         //TODO: implementar
-        return new OMat3x3();
+        return new OMat3x3(1,0,0,0,1,0,0,0,1);
     }
 
     // constructores
