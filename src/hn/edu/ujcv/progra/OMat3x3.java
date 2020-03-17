@@ -95,7 +95,9 @@ public class OMat3x3 {
 
     public double determinante(){
         //TODO: implementar
-        return 0.0f;
+        return (col1.getA() * (col2.getB() * col3.getB2() - col2.getB2() * col3.getB())) +
+        ( - col2.getA()*(col1.getB() * col3.getB2() - col1.getB2()* col3.getB())) +
+                (col3.getA()* (col1.getB() * col2.getB2() - col1.getB2() * col2.getB()));
     }
 
     // Metodos de la clase.
