@@ -71,7 +71,7 @@ private OVecR2 col2;
 
     public double determinante(){
         //TODO: implementar
-        return 0.0f;
+        return col1.getX() * col2.getY() - col2.getX() * col1.getY();
     }
 
     // Metodos de la clase.

@@ -47,7 +47,7 @@ public class OMat3x3 {
     public OVecR3 getFila3() {
             return new OVecR3(col1.getB2(), col2.getB2(), col3.getB2());
         }
-    public void setCol3(OVecR3 col2) {
+    public void setCol3(OVecR3 col3) {
 
         this.col3 = new OVecR3(col3);
     }
@@ -61,7 +61,7 @@ public class OMat3x3 {
     public OMat3x3 transpuesta(){
         //TODO: implementar
         return new OMat3x3(col1.getA(), col2.getA(), col3.getA(),
-                col1.getB(), col2.getB(), col3.getB2(), 
+                col1.getB(), col2.getB(), col3.getB2(),
                 col1.getB2(), col2.getB2(), col3.getB2());
     }
 

@@ -2,34 +2,61 @@ package hn.edu.ujcv.progra;
 
 public class OMat4x4 {
     // miembros
-    private OVecR2 col1;
-    private OVecR2 col2;
-    private OVecR2 col3;
-    private OVecR2 col4;
+    private OVecR4 col1;
+    private OVecR4 col2;
+    private OVecR4 col3;
+    private OVecR4 col4;
     // accesoras y mutadoras
+    public OVecR4 getColumna1(){
+        return col1;
+    }
 
-        public OVecR2 getFila1(){
-            return new OVecR2(col1.getX(),col2.getX());
-        }
-        public void setCol1(OVecR2 b){
-            col1 = new OVecR2(b);
-        }
-        public void setFila1(OVecR2 fila){
-            col1.setX(fila.getX());
-            col2.setX(fila.getY());
-        }
-        public OVecR2 getColumna2(){
-            return col2;
-        }
-        public OVecR2 getFila2(){
-            return new OVecR2(col1.getY(),col2.getY());
-        }
+    public OVecR4 getFila1(){
+        return new OVecR4(col1.getA(),col2.getA(),col3.getA(),col4.getA());
+    }
+    public void setCol1(OVecR4 b){
+        col1 = new OVecR4(b);
+    }
+    public void setFila1(OVecR4 fila){
+        col1.setA(fila.getA());
+        col2.setA(fila.getA());
+        col3.setA(fila.getA());
+        col4.setA(fila.getA());
+    }
+    public OVecR4 getColumna2(){
+        return col2;
+    }
+    public OVecR4 getFila2(){
+        return new OVecR4(col1.getB(),col2.getB(),col3.getB(),col4.getB());
+    }
 
-        public void setCol2(OVecR2 col2) {
+    public void setCol2(OVecR4 col2) {
 
-            this.col2 = new OVecR2(col2);
-            // metodos
-        }
+        this.col2 = new OVecR4(col2);
+    }
+    public void setFila2(OVecR4 fila) {
+        col1.setB(fila.getB());
+        col2.setB(fila.getB());
+        col3.setB(fila.getB());
+        col4.setB(fila.getB());
+    }
+    public OVecR4 getColumna3(){
+        return col3;
+    }
+
+    public OVecR4 getFila3() {
+        return new OVecR4(col1.getB2(), col2.getB2(), col3.getB2(),col4.getB2());
+    }
+    public void setCol3(OVecR4 col3){
+
+        this.col3 = new OVecR4(col3);
+    }
+    public void setFila3(OVecR4 fila) {
+        col1.setB2(fila.getB2());
+        col2.setB2(fila.getB2());
+        col3.setB2(fila.getB2());
+        col4.setB2(fila.getB2());
+    }
 
     // metodos
 
