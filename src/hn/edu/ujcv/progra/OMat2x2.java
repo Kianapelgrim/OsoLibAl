@@ -92,15 +92,13 @@ private OVecR2 col2;
 
  public OMat2x2(){}
 
-    public OMat2x2(OVecR2 a){}
-
     public OMat2x2(double m11, double m12,
         double m21, double m22){}
 
 
-
-    public OMat2x2(OVecR2 a, OVecR2 b, boolean esColumna){}
-    public OMat2x2( OVecR2 col1, OVecR2 col2) {
+    public OMat2x2( OVecR2 col1, OVecR2 col2){
+        this.col1=col1;
+        this.col2=col2;
     }
 
 
