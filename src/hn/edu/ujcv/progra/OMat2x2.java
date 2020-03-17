@@ -66,8 +66,8 @@ private OVecR2 col2;
 
     public OMat2x2 mult(OMat2x2 b){
         //TODO: implementar
-        return new OMat2x2(col1.prodPunto(b.getFila1()),col1.prodPunto(b.getFila2()),
-                col2.prodPunto(b.getFila1()),col2.prodPunto(b.getFila2()));
+        return new OMat2x2(getFila1().prodPunto(b.col1),getFila1().prodPunto(b.col2),
+                getFila2().prodPunto(b.col1),getFila2().prodPunto(b.col2));
     }
 
     public double determinante(){

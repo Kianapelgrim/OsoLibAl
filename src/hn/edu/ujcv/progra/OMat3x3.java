@@ -88,9 +88,9 @@ public class OMat3x3 {
         //  m11   =  a.m11 * b.m11 + a.m12 * b.m21
         //  m12   =  a.m11 * b.m12 + a.m12 * b.m22
         //
-        return new OMat3x3(col1.prodPunto(b.getFila1()),col1.prodPunto(b.getFila2()), col1.prodPunto(b.getFila3()),
-                col2.prodPunto(b.getFila1()),col2.prodPunto(b.getFila2()),col2.prodPunto(b.getFila3()),
-                col3.prodPunto(b.getFila1()),col3.prodPunto(b.getFila2()), col3.prodPunto(b.getFila3()));
+        return new OMat3x3(getFila1().prodPunto(b.col1),getFila1().prodPunto(b.col2), getFila1().prodPunto(b.col3),
+                getFila2().prodPunto(b.col1),getFila2().prodPunto(b.col2),getFila2().prodPunto(b.col3),
+                getFila3().prodPunto(b.col1),getFila3().prodPunto(b.col2), getFila3().prodPunto(b.col3));
     }
 
     public double determinante(){
