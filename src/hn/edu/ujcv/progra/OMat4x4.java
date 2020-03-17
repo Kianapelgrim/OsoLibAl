@@ -51,6 +51,21 @@ public class OMat4x4 {
 
         this.col3 = new OVecR4(col3);
     }
+    public void setFila4(OVecR4 fila) {
+        col1.setA2(fila.getA2());
+        col2.setA2(fila.getA2());
+        col3.setA2(fila.getA2());
+        col4.setA2(fila.getA2());
+    }
+    public OVecR4 getColumna4(){
+        return col4;
+    }
+
+    public OVecR4 getFila4() {return new OVecR4(col1.getA2(), col2.getA2(), col3.getA2(),col4.getA2());}
+    public void setCol4(OVecR4 col4){
+
+        this.col4 = new OVecR4(col4);
+    }
     public void setFila3(OVecR4 fila) {
         col1.setB2(fila.getB2());
         col2.setB2(fila.getB2());
