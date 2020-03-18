@@ -89,12 +89,12 @@ public class OMat4x4 {
     }
     public OMat4x4 suma(OMat4x4 b){
         //TODO: implementar
-        return new OMat4x4();
+        return new OMat4x4(col1.suma(b.col1), col2.suma(b.col2), col3.suma(b.col3), col4.suma(b.col4));
     }
 
     public OMat4x4 resta(OMat4x4 b){
         //TODO: implementar
-        return new OMat4x4();
+        return new OMat4x4(col1.resta(b.col1), col2.resta(b.col2), col3.resta(b.col3), col4.resta(b.col4));
     }
 
     public OMat4x4 mult(OMat4x4 b){
@@ -105,8 +105,15 @@ public class OMat4x4 {
         //
         //  m11   =  a.m11 * b.m11 + a.m12 * b.m21
         //  m12   =  a.m11 * b.m12 + a.m12 * b.m22
-        //
-        return new OMat4x4();
+
+        return new OMat4x4(getFila1().prodPunto(b.col1), getFila1().prodPunto(b.col2), getFila1().prodPunto(b.col3),
+                getFila1().prodPunto(b.col4),
+                getFila2().prodPunto(b.col1),getFila2().prodPunto(b.col2),getFila2().prodPunto(b.col3),
+                getFila2().prodPunto(b.col4),
+                getFila3().prodPunto(b.col1),getFila3().prodPunto(b.col2), getFila3().prodPunto(b.col3),
+                getFila3().prodPunto(b.col4),
+                getFila4().prodPunto(b.col1),getFila4().prodPunto(b.col2), getFila4().prodPunto(b.col3),
+                getFila4().prodPunto(b.col4));
     }
 
     public double determinante(){
