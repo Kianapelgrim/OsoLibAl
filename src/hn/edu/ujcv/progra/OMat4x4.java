@@ -77,7 +77,10 @@ public class OMat4x4 {
 
     public OMat4x4 transpuesta(){
         //TODO: implementar
-        return new OMat4x4();
+        return new OMat4x4(col1.getA(), col2.getA(), col3.getA(),col4.getA(),
+                col1.getB(), col2.getB(), col3.getB(), col4.getB(),
+                col1.getB2(), col2.getB2(), col3.getB2(), col4.getB2(),
+                col1.getA2(), col2.getA2(), col3.getA2(), col4.getA2());
     }
 
     public OMat4x4 inversa(){
