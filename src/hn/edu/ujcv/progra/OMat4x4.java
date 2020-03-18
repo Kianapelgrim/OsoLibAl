@@ -147,7 +147,7 @@ public class OMat4x4 {
 
     public OMat4x4(OVecR4 col1,OVecR4 col2, OVecR4 col3,OVecR4 col4){
         this.col1 = col1;
-        this.col3 = col3;
+        this.col3  = col3;
         this.col2 = col2;
         this.col4 = col4;
     }
