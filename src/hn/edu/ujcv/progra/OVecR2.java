@@ -51,4 +51,14 @@ public class OVecR2 {
         this.y = a.y;}
 
     public OVecR2(double x, double y){}
-}
+
+    @Override
+    public String toString() {
+        return " {" +
+                "i=" + x +
+                ", j=" + y +
+                '}';
+    }
+
+    }
+

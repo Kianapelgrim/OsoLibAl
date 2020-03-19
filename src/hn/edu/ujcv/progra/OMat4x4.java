@@ -88,7 +88,7 @@ public class OMat4x4 {
         return new OMat4x4();
     }
     public OMat4x4 suma(OMat4x4 b){
-        //TODO: implementar
+        //TODO:implementar
         return new OMat4x4(col1.suma(b.col1), col2.suma(b.col2), col3.suma(b.col3), col4.suma(b.col4));
     }
 
@@ -118,8 +118,9 @@ public class OMat4x4 {
 
     public double determinante(){
         //TODO: implementar
-        return 0.0f;
-    }
+
+
+    return 0.0f;}
 
     // Metodos de la clase.
     public static OMat4x4 rotX(double alpha){

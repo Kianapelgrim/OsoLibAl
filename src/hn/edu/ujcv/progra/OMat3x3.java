@@ -60,9 +60,8 @@ public class OMat3x3 {
 
     public OMat3x3 transpuesta(){
         //TODO: implementar
-        return new OMat3x3(col1.getA(), col2.getA(), col3.getA(),
-                col1.getB(), col2.getB(), col3.getB2(),
-                col1.getB2(), col2.getB2(), col3.getB2());
+        return new OMat3x3(col1 = getFila1(), col2 = getFila2(), col3=getFila3()
+                );
     }
 
     public OMat3x3 inversa(){
@@ -87,10 +86,10 @@ public class OMat3x3 {
         //
         //  m11   =  a.m11 * b.m11 + a.m12 * b.m21
         //  m12   =  a.m11 * b.m12 + a.m12 * b.m22
-        //
-        return new OMat3x3(getFila1().prodPunto(b.col1),getFila1().prodPunto(b.col2), getFila1().prodPunto(b.col3),
-                getFila2().prodPunto(b.col1),getFila2().prodPunto(b.col2),getFila2().prodPunto(b.col3),
-                getFila3().prodPunto(b.col1),getFila3().prodPunto(b.col2), getFila3().prodPunto(b.col3));
+        OVecR3 Col1 = new OVecR3(getFila1().prodPunto(b.col1),getFila1().prodPunto(b.col2), getFila1().prodPunto(b.col3));
+        OVecR3 Col2 = new OVecR3( getFila2().prodPunto(b.col1),getFila2().prodPunto(b.col2),getFila2().prodPunto(b.col3));
+        OVecR3 Col3 = new OVecR3(getFila3().prodPunto(b.col1),getFila3().prodPunto(b.col2), getFila3().prodPunto(b.col3));
+        return new OMat3x3(Col1, Col2, Col3);
     }
 
     public double determinante(){
@@ -102,16 +101,16 @@ public class OMat3x3 {
 
     // Metodos de la clase.
     public static OMat3x3 rotX(double alpha){
-
-
-        return new OMat3x3(1,0,0,0,Math.cos(alpha), -Math.sin(alpha),
-                0,Math.sin(alpha), Math.cos(alpha));
+OVecR3 col1 = new OVecR3(1,0,0);
+        OVecR3 col2 = new OVecR3(0, Math.cos(alpha), Math.sin(alpha));
+        OVecR3 col3 = new OVecR3(0, -Math.sin(alpha), Math.cos(alpha));
+        return new OMat3x3(col1,col2,col3);
     }
 
     public static OMat3x3 rotY(double alpha){
 
 
-        return new OMat3x3(Math.cos(alpha), 0 , Math.sin(alpha),
+        return new OMat3x3 ( Math.cos(alpha), 0 , Math.sin(alpha),
                 0,1,0, -Math.sin(alpha), 0 , Math.cos(alpha));
     }
 
@@ -131,11 +130,6 @@ public class OMat3x3 {
     // constructores
     public OMat3x3(){}
 
-    public OMat3x3(double m11, double m12, double m13,
-                   double m21, double m22, double m23,
-                   double m31, double m32, double m33){}
-
-
 
     public OMat3x3(OVecR3 col1, OVecR3 col2, OVecR3 col3
     ){
@@ -143,7 +137,9 @@ public class OMat3x3 {
         this.col2 = col2;
         this.col3 = col3;
     }
-
+public OMat3x3( double m11, double m12, double m13,
+                double m21, double m22, double m23,
+                double m31, double m32, double m33){}
 
 
 }
