@@ -46,17 +46,19 @@ public class OVecR2 {
     // constructores
     public OVecR2() { }
 
-    public OVecR2(OVecR2 a){
-        this.x = a.x;
-        this.y = a.y;}
+    public OVecR2(double x, double y){
+        this.x = x;
+        this.y = y;}
 
-    public OVecR2(double x, double y){}
+        public OVecR2(OVecR2 a){
+
+        }
 
     @Override
     public String toString() {
         return " {" +
-                "i=" + x +
-                ", j=" + y +
+                "i=" + getX() +
+                ", j=" + getY() +
                 '}';
     }
 

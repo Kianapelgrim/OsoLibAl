@@ -72,5 +72,9 @@ public class OVecR3 {
         this.b2 = s.b2;
     }
 
-    public OVecR3(double a, double b, double b2){}
+    public OVecR3(double a, double b, double b2){
+        this.a = a;
+        this.b = b;
+        this.b2 = b2;
+    }
 }

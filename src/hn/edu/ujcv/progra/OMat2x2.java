@@ -50,9 +50,11 @@ private OVecR2 col2;
 
     public OMat2x2 inversa(){
         //TODO: implementar
-        OVecR2 col1I = new OVecR2(1,0);
-        OVecR2 col2I = new OVecR2(0,1);
-        return  new OMat2x2(col1I , col2I);
+
+        return  new OMat2x2( ( (1) / ((col1.getX() * col2.getY()) - (col1.getY() * col2.getX())) * col2.getY()),
+                (1) / ((col1.getX() * col2.getY()) - (col1.getY() * col2.getX())) * -col2.getX(),
+                (1) / ((col1.getX() * col2.getY()) - (col1.getY() * col2.getX())) * -col1.getY(),
+                (1) / ((col1.getX() * col2.getY()) - (col1.getY() * col2.getX())) *  col1.getX());
     }
     public OMat2x2 suma(OMat2x2 b){
         //TODO: implementar
