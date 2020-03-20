@@ -501,7 +501,7 @@ public class Main {
                        y4.setM42(lc.getDouble(msj));
                        y4.setM43(lc.getDouble(msj));
                        y4.setM44(lc.getDouble(msj));
-                       x4.mult(zy4);break;
+                       x4.mult(y4);break;
                    case 5:
                        System.out.println("Introduzca su valor en grados que desea su matriz de rotación");
                        double alpha=lc.getDouble(msj);
