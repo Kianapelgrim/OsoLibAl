@@ -77,4 +77,11 @@ public class OVecR3 {
         this.b = b;
         this.b2 = b2;
     }
+    @Override
+    public String toString() {
+        return " {" +
+                "X=" + getA() +
+                ", Y=" + getB() + ", Z=" + getB2() +
+                '}';
+    }
 }

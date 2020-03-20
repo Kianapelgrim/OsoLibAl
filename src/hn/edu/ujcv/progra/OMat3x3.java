@@ -3,143 +3,212 @@ package hn.edu.ujcv.progra;
 public class OMat3x3 {
     // miembros
 
-    private OVecR3 col1;
-    private OVecR3 col2;
-    private OVecR3 col3;
+    private double a;
+    private double b;
+    private double c;
+    private double d;
+    private double a2;
+    private double b2;
+    private double c2;
+    private double f;
+    private double e;
+
+    private LectorDeTeclado lt = new LectorDeTeclado();
 
 
     // accesoras y mutadoras
-    public OVecR3 getColumna1(){
-        return col1;
+    public double getA2() {
+        return a2;
     }
 
-    public OVecR3 getFila1(){
-        return new OVecR3(col1.getA(),col2.getA(),col3.getA());
-    }
-    public void setCol1(OVecR3 b){
-        col1 = new OVecR3(b);
-    }
-    public void setFila1(OVecR3 fila){
-        col1.setA(fila.getA());
-        col2.setA(fila.getA());
-        col3.setA(fila.getA());
-    }
-    public OVecR3 getColumna2(){
-        return col2;
-    }
-    public OVecR3 getFila2(){
-        return new OVecR3(col1.getB(),col2.getB(),col3.getB());
+    public void setA2(double a2) {
+        this.a2 = a2;
     }
 
-    public void setCol2(OVecR3 col2) {
-
-        this.col2 = new OVecR3(col2);
-}
-    public void setFila2(OVecR3 fila) {
-        col1.setB(fila.getB());
-        col2.setB(fila.getB());
-        col3.setB(fila.getB());
-    }
-    public OVecR3 getColumna3(){
-        return col3;
+    public double getB2() {
+        return b2;
     }
 
-    public OVecR3 getFila3() {
-            return new OVecR3(col1.getB2(), col2.getB2(), col3.getB2());
-        }
-    public void setCol3(OVecR3 col3) {
-
-        this.col3 = new OVecR3(col3);
+    public void setB2(double b2) {
+        this.b2 = b2;
     }
-    public void setFila3(OVecR3 fila) {
-        col1.setB2(fila.getB2());
-        col2.setB2(fila.getB2());
-        col3.setB2(fila.getB2());
+
+    public double getC2() {
+        return c2;
+    }
+
+    public void setC2(double c2) {
+        this.c2 = c2;
+    }
+
+    public double getA() {
+        return a;
+    }
+
+    public void setE(double e) {
+        this.e = e;
+    }
+
+    public double getE() {
+        return e;
+    }
+
+    public void setF(double f) {
+        this.f = f;
+    }
+
+    public double getF() {
+        return f;
+    }
+
+    public void setA(double a) {
+        this.a = a;
+    }
+
+    public double getB() {
+        return b;
+    }
+
+    public void setB(double b) {
+        this.b = b;
+    }
+
+    public double getC() {
+        return c;
+    }
+
+    public void setC(double c) {
+        this.c = c;
+    }
+
+    public double getD() {
+        return d;
+    }
+
+    public void setD(double d) {
+        this.d = d;
     }
     //METODOS
 
-    public OMat3x3 transpuesta(){
+    public void transpuesta() {
         //TODO: implementar
-        return new OMat3x3(col1 = getFila1(), col2 = getFila2(), col3=getFila3()
-                );
+        System.out.println(a + "\t" + d + "\t" + c2 + "\n" + b + "\t" + a2 + "\t" + e + "\n" + c + "\t" + b2 + "\t" + f);
     }
 
-    public OMat3x3 inversa(){
+
+    public void suma(OMat3x3 z) {
         //TODO: implementar
-        return new OMat3x3();
-    }
-    public OMat3x3 suma(OMat3x3 b){
-        //TODO: implementar
-        return new OMat3x3(col1.suma(b.col1), col2.suma(b.col2), col3.suma(b.col3));
+        a = a + z.a;
+        b = b + z.b;
+        c = c + z.c;
+        d = d + z.d;
+        a2 = a2 + z.a2;
+        b2 = b2 + z.b2;
+        c2 = c2 + z.c2;
+        e = e + z.e;
+        f = f + z.f;
+        System.out.println(a + "\t" + b + "\t" + c + "\n" + d + "\t" + a2 + "\t" + b2 + "\n" + c2 + "\t" + e + "\t" + f);
+
     }
 
-    public OMat3x3 resta(OMat3x3 b){
+    public void resta(OMat3x3 z) {
         //TODO: implementar
-        return new OMat3x3(col1.resta(b.col1), col2.resta(b.col2), col3.resta(b.col3));
+        a = a + z.a;
+        b = b + z.b;
+        c = c + z.c;
+        d = d + z.d;
+        a2 = a2 + z.a2;
+        b2 = b2 + z.b2;
+        c2 = c2 + z.c2;
+        e = e + z.e;
+        f = f + z.f;
+        System.out.println(a + "\t" + b + "\t" + c + "\n" + d + "\t" + a2 + "\t" + b2 + "\n" + c2 + "\t" + e + "\t" + f);
+
     }
 
-    public OMat3x3 mult(OMat3x3 b){
+    public void mult(OMat3x3 z) {
         //TODO: implementar
-        //    m11  m12
-        //    m21  m22
-        //
-        //
-        //  m11   =  a.m11 * b.m11 + a.m12 * b.m21
-        //  m12   =  a.m11 * b.m12 + a.m12 * b.m22
-        OVecR3 Col1 = new OVecR3(getFila1().prodPunto(b.col1),getFila1().prodPunto(b.col2), getFila1().prodPunto(b.col3));
-        OVecR3 Col2 = new OVecR3( getFila2().prodPunto(b.col1),getFila2().prodPunto(b.col2),getFila2().prodPunto(b.col3));
-        OVecR3 Col3 = new OVecR3(getFila3().prodPunto(b.col1),getFila3().prodPunto(b.col2), getFila3().prodPunto(b.col3));
-        return new OMat3x3(Col1, Col2, Col3);
+        //   a  b  c
+        //   d  a2  b2
+        //     c2  e  f
+        a = a * z.a + b * z.d + c * z.c2;
+        b = a * z.b + b * z.a2 + c * z.e;
+        c = a * z.c + b * z.b2 + c * z.f;
+        d = d * z.a + a2 * z.d + b2 * z.c2;
+        a2 = d * z.b + a2 * z.a2 + b2 * z.e;
+        b2 = d * z.c + a2 * z.b2 + b2 * z.f;
+        c2 = c2 * z.a + e * z.d + f * z.c2;
+        e = c2 * z.b + e * z.a2 + f * z.e;
+        f = c2 * z.c + e * z.b2 + f * z.f;
+        System.out.println(a + "\t" + b + "\t" + c + "\n" + d + "\t" + a2 + "\t" + b2 + "\n" + c2 + "\t" + e + "\t" + f);
+
+
     }
 
-    public double determinante(){
+    public void determinante() {
         //TODO: implementar
-        return (col1.getA() * (col2.getB() * col3.getB2() - col2.getB2() * col3.getB())) +
-        ( - col2.getA()*(col1.getB() * col3.getB2() - col1.getB2()* col3.getB())) +
-                (col3.getA()* (col1.getB() * col2.getB2() - col1.getB2() * col2.getB()));
+        double det = ((a * a2 * f) + (b * e * c) + (c2 * b * b2)) - ((c * a2 * c2) + (b2 * e * a) + (f * b * d));
+        System.out.println(det);
+
     }
+
 
     // Metodos de la clase.
-    public static OMat3x3 rotX(double alpha){
-OVecR3 col1 = new OVecR3(1,0,0);
+    public static void rotX(double alpha) {
+        OVecR3 col1 = new OVecR3(1, 0, 0);
         OVecR3 col2 = new OVecR3(0, Math.cos(alpha), Math.sin(alpha));
         OVecR3 col3 = new OVecR3(0, -Math.sin(alpha), Math.cos(alpha));
-        return new OMat3x3(col1,col2,col3);
+        System.out.println(col1.getA() + "\t" + col2.getA() + "\t" + col3.getA() + "\n" + col1.getB() + "\t"
+                + col2.getB() + "\t" + col3.getB() + "\n" + col1.getB2() + "\t" + col2.getB2() + "\t" + col3.getB2());
     }
 
-    public static OMat3x3 rotY(double alpha){
+    public static void rotY(double alpha) {
 
+        OVecR3 col1 = new OVecR3(Math.cos(alpha), 0, Math.sin(alpha));
+        OVecR3 col2 = new OVecR3(0, 1, 0);
+        OVecR3 col3 = new OVecR3(-Math.sin(alpha), 0, Math.cos(alpha));
 
-        return new OMat3x3 ( Math.cos(alpha), 0 , Math.sin(alpha),
-                0,1,0, -Math.sin(alpha), 0 , Math.cos(alpha));
+        System.out.println(col1.getA() + "\t" + col2.getA() + "\t" + col3.getA() + "\n" + col1.getB() + "\t"
+                + col2.getB() + "\t" + col3.getB() + "\n" + col1.getB2() + "\t" + col2.getB2() + "\t" + col3.getB2());
     }
 
-    public static OMat3x3 rotZ(double alpha){
 
+    public static void rotZ(double alpha){
 
-        return new OMat3x3(Math.cos(alpha), -Math.sin(alpha),0 ,Math.sin(alpha), Math.cos(alpha),0 ,0 ,0,1);
+        OVecR3 col1 = new OVecR3(Math.cos(alpha), -Math.sin(alpha),0 );
+        OVecR3 col2 = new OVecR3(Math.sin(alpha), Math.cos(alpha),0);
+        OVecR3 col3 = new OVecR3(0 ,0,1);
+
+        System.out.println(col1.getA() + "\t" + col2.getA() + "\t" + col3.getA() + "\n" + col1.getB() + "\t"
+                + col2.getB() + "\t" + col3.getB() + "\n" + col1.getB2() + "\t" + col2.getB2() + "\t" + col3.getB2());
     }
 
-    public static OMat3x3 identidad(){
+    public static void identidad(){
 
 
         //TODO: implementar
-        return new OMat3x3(1,0,0,0,1,0,0,0,1);
+        System.out.println("1\t0\t0\n0\t1\t0\n0\t0\t1");
     }
 
     // constructores
     public OMat3x3(){}
 
 
-    public OMat3x3(OVecR3 col1, OVecR3 col2, OVecR3 col3
-    ){
-        this.col1 = col1;
-        this.col2 = col2;
-        this.col3 = col3;
-    }
-public OMat3x3( double m11, double m12, double m13,
-                double m21, double m22, double m23,
-                double m31, double m32, double m33){}
+public OMat3x3( double a, double b, double c,
+                double d, double a2, double b2,
+                double c2, double e, double f){
+        this.a=a;
+        this.b2=b2;
+        this.b= b;
+        this.a2= a2;
+        this.c=c;
+        this.c2=c2;
+        this.e=e;
+        this.f=f;
+        this.d=d;
+
+
+}
 
 
 }

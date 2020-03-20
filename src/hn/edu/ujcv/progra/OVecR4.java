@@ -66,6 +66,13 @@ public class OVecR4 {
     }
 
     public OVecR4(double a, double a2, double b, double b2){}
-}
+    @Override
+    public String toString() {
+        return " {" +
+                "X=" + getA() +
+                ", Y=" + getB() + ", Z=" + getB2() +  ", K=" + getB2() +
+                '}';
+}}
+
 
 

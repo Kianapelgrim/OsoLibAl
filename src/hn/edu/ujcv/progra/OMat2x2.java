@@ -5,115 +5,107 @@ import java.util.concurrent.Callable;
 public class OMat2x2 {
 
     // miembros
-private OVecR2 col1;
-private OVecR2 col2;
-
+    private double a;
+    private double b;
+    private double c;
+    private double d;
+    private LectorDeTeclado lt = new LectorDeTeclado();
 
 
     // accesoras y mutadoras
-    //getFilaX
-    //getColY
-    public OVecR2 getColumna1(){
-        return col1;
+
+    public double getA() {
+        return a;
     }
 
-    public OVecR2 getFila1(){
-        return new OVecR2(col1.getX(),col2.getX());
-    }
-    public void setCol1(OVecR2 b){
-        col1 = new OVecR2(b);
-    }
-    public void setFila1(OVecR2 fila){
-        col1.setX(fila.getX());
-        col2.setX(fila.getY());
-    }
-    public OVecR2 getColumna2(){
-        return col2;
-    }
-    public OVecR2 getFila2(){
-        return new OVecR2(col1.getY(),col2.getY());
+    public void setA(double a) {
+        this.a = a;
     }
 
-    public void setCol2(OVecR2 col2) {
-
-        this.col2 = new OVecR2(col2);
-        // metodos
-    }
-    public void setFila2(OVecR3 fila){
-        col1.setY(fila.getA());
-        col2.setY(fila.getB());
-    }
-    public OMat2x2 transpuesta(){
-        //TODO: implementar
-        return new OMat2x2(col1.getX(), col2.getX(), col1.getY(), col2.getY());
+    public double getB() {
+        return b;
     }
 
-    public OMat2x2 inversa(){
-        //TODO: implementar
-
-        return  new OMat2x2( ( (1) / ((col1.getX() * col2.getY()) - (col1.getY() * col2.getX())) * col2.getY()),
-                (1) / ((col1.getX() * col2.getY()) - (col1.getY() * col2.getX())) * -col2.getX(),
-                (1) / ((col1.getX() * col2.getY()) - (col1.getY() * col2.getX())) * -col1.getY(),
-                (1) / ((col1.getX() * col2.getY()) - (col1.getY() * col2.getX())) *  col1.getX());
-    }
-    public OMat2x2 suma(OMat2x2 b){
-        //TODO: implementar
-        return new OMat2x2(col1.suma(b.col1) , col2.suma(b.col2));
+    public void setB(double b) {
+        this.b = b;
     }
 
-    public OMat2x2 resta(OMat2x2 b){
-        //TODO: implementar
-        return new OMat2x2(col1.resta(b.col1) , col2.resta(b.col2));
+    public double getC() {
+        return c;
     }
 
-    public OMat2x2 mult(OMat2x2 b){
-        //TODO: implementar
-        return new OMat2x2(getFila1().prodPunto(b.col1),getFila1().prodPunto(b.col2),
-                getFila2().prodPunto(b.col1),getFila2().prodPunto(b.col2));
+    public void setC(double c) {
+        this.c = c;
     }
 
-    public double determinante(){
-        //TODO: implementar
-        return col1.getX() * col2.getY() - col2.getX() * col1.getY();
+    public double getD() {
+        return d;
     }
 
-    // Metodos de la clase.
-    public static OMat2x2 rot(double alpha){
-        //TODO: implementar
-        return new OMat2x2(Math.cos(alpha), -Math.sin(alpha), Math.sin(alpha), Math.cos(alpha));
+    public void setD(double d) {
+        this.d = d;
     }
 
-    public static OMat2x2 identidad(){
-        //TODO: implementar
-        OVecR2 col1I = new OVecR2(1,0);
-        OVecR2 col2I = new OVecR2(0,1);
-        return  new OMat2x2(col1I , col2I);
+    public void transpuesta() {
+        System.out.println(a + "\t" + c +"\n" + d + "\t" + b);
     }
-
-
-    // v * M => vector
-
-    public OVecR2 mult(OVecR2 a){
-        //             x                        y
-        //  ( a.x * m11 + a.y * m21 , a.x * m12 + a.y * m22)
-        //
-        return new OVecR2();
-    }
-
-
-    // constructores
-
-
-    public OMat2x2(OMat2x2 a){}
-
-    public OMat2x2(double m11, double m12,
-        double m21, double m22){}
-
-
-    public OMat2x2( OVecR2 col1, OVecR2 col2){
-        this.col1=col1;
-        this.col2=col2;
-    }
-
-
+public void suma(OMat2x2 k) {
+        a = this.a + k.a;
+    b = this.b + k.b;
+    c = this.c + k.c;
+    d = this.d + k.d;
+    System.out.println(a + "\t" + b +"\n" + c + "\t" + d);
 }
+    public void  resta(OMat2x2 k) {
+        a = this.a - k.a;
+        b = this.b - k.b;
+        c = this.c - k.c;
+        d = this.d - k.d;
+        System.out.println(a + "\t" + b +"\n" + c + "\t" + d);
+    }
+    public void multi (OMat2x2 k){
+      a = a * k.a + b * k.c;
+      b = a * k.b + b * k.d;
+      c = c * k.a + d * k.c;
+      d = c * k.b + d * k.d;
+        System.out.println(a + "\t" + b +"\n" + c + "\t" + d);
+    }
+public void inversa () {
+        double det = (a * d) - (c * b);
+  a= (1) / (det) * d;
+  b= (1) / (det) * -b;
+          c= (1) / (det) * -c;
+                  d= (1) / (det) * a;
+                  System.out.println(a + "\t" + b +"\n" + c + "\t" + d);
+}
+
+    public void determinante(){
+        double det =(a * d) - (c * b);
+        System.out.println(det);
+    }
+public void rot(double alpha){
+    double a = Math.cos(alpha);
+    double b = -Math.sin(alpha);
+    double c = Math.sin(alpha);
+    double d = Math.cos(alpha);
+    System.out.println(a + "\t" + b +"\n" + c + "\t" + d);
+}
+public void identidad() {
+        System.out.println("1\t0\n0\t1");
+}
+public void multivec(OVecR2 z){
+        a = a * z.getX() +  z.getY();
+        b = c * z.getX() + d * z.getX();
+    System.out.println(a + "\t" +b);
+}
+    // constructores
+public OMat2x2(){}
+
+public OMat2x2(OMat2x2 a){}
+
+public OMat2x2(double a, double b,
+        double c, double d){
+        this.a = a; this.b = b; this.c = c; this.d = d;
+        }
+
+        }
