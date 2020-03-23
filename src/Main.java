@@ -10,6 +10,7 @@ public class Main {
         OVecR3 y = new OVecR3();
         OVecR4 x1 = new OVecR4();
         OVecR4 y1 = new OVecR4();
+
         OMat2x2 x2 = new OMat2x2();
         OMat2x2 y2 = new OMat2x2();
         OMat3x3 x3 = new OMat3x3();
@@ -510,7 +511,7 @@ public class Main {
                    case 7:
                        System.out.println("Introduzca su valor en radianes que desea su matriz de rotación");
                       alpha=lc.getDouble(msj);
-                       x4.rotX(alpha); break;
+                       x4.rotZ(alpha); break;
                    case 8:
                        x4.identidad();
                    case 9:  System.out.println("Introduzca los datos de matriz por filas");
