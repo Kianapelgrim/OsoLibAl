@@ -41,14 +41,14 @@ public class OVecR3 {
         return new OVecR3(this.a - b.a, this.b - b.b, this.b2 - b.b2);
     }
 
-    public OVecR3 prodCruz(OVecR3 b){
+    public OVecR3 prodCruz(OVecR3 z){
         //
         //  x  y  z
         //  x1 y1 z1       i = y * z1 - z * y1;
         //                 j = - ();
         //                 k = ;
         //
-        return new OVecR3(this.b* b.b2 - this.b2*b.b, -this.a* -b.b2 + this.b2 * -b.a, this.a*b.b-this.b*b.a );
+        return new OVecR3(this.b* z.b2 - this.b2*z.b, -(this.a* z.b2 - this.b2 * z.a), this.a*z.b-this.b*z.a );
     }
 
     public double prodPunto(OVecR3 b){

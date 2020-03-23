@@ -47,7 +47,7 @@ public class OMat2x2 {
     }
 
     public void transpuesta() {
-        System.out.println(a + "\t" + c +"\n" + d + "\t" + b);
+        System.out.println(a + "\t" + c +"\n" + b + "\t" + d);
     }
 public void suma(OMat2x2 k) {
         a = this.a + k.a;
@@ -64,19 +64,19 @@ public void suma(OMat2x2 k) {
         System.out.println(a + "\t" + b +"\n" + c + "\t" + d);
     }
     public void multi (OMat2x2 k){
-      a = a * k.a + b * k.c;
-      b = a * k.b + b * k.d;
-      c = c * k.a + d * k.c;
-      d = c * k.b + d * k.d;
-        System.out.println(a + "\t" + b +"\n" + c + "\t" + d);
+     double a1 = a * k.a + b * k.c;
+      double b1 = a * k.b + b * k.d;
+     double c1 = c * k.a + d * k.c;
+      double d1 = c * k.b + d * k.d;
+        System.out.println(a1 + "\t" + b1 +"\n" + c1 + "\t" + d1);
     }
 public void inversa () {
         double det = (a * d) - (c * b);
-  a= (1) / (det) * d;
-  b= (1) / (det) * -b;
-          c= (1) / (det) * -c;
-                  d= (1) / (det) * a;
-                  System.out.println(a + "\t" + b +"\n" + c + "\t" + d);
+  double a1= ((1) / (det)) * d;
+  double b1= ((1) / (det) )* -b;
+         double c1= ((1) / (det)) * -c;
+               double   d1= ((1) / (det)) * a;
+                  System.out.println(a1 + "\t" + b1 +"\n" + c1+ "\t" + d1);
 }
 
     public void determinante(){

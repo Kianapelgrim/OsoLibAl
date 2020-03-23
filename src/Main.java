@@ -1,7 +1,5 @@
 import hn.edu.ujcv.progra.*;
 
-import java.sql.SQLOutput;
-
 
 public class Main {
 
@@ -12,8 +10,6 @@ public class Main {
         OVecR3 y = new OVecR3();
         OVecR4 x1 = new OVecR4();
         OVecR4 y1 = new OVecR4();
-        OVecR4 z1 = new OVecR4();
-        OVecR4 w1 = new OVecR4();
         OMat2x2 x2 = new OMat2x2();
         OMat2x2 y2 = new OMat2x2();
         OMat3x3 x3 = new OMat3x3();
@@ -32,7 +28,7 @@ public class Main {
        switch (resp1) {
            case 1:
                System.out.println("\n ¿Qué operación desea realizar? \n 1: Producto punto \n 2: Suma \n 3: Resta \n" +
-                       " 4: Magnitud\n 0: Si desea SALIR ");
+                       " 4: Magnitud\n 0: Si desea regresar al menú ");
 
                resp2 = lc.getInteger(msj);
                switch (resp2) {
@@ -72,7 +68,7 @@ public class Main {
        }break;
        //VECTOR R3
            case 2: System.out.println("\n ¿Qué operación desea realizar? \n 1: Producto punto \n 2: Suma \n 3: Resta \n" +
-                   " 4: Magnitud\n 5: ProdCruz \n 0: Si desea SALIR ");
+                   " 4: Magnitud\n 5: ProdCruz \n 0: Si desea regresar al menú ");
                resp2 = lc.getInteger(msj);
                switch (resp2) {
                    case 1:
@@ -131,7 +127,7 @@ public class Main {
                //VECTOR R4
            case 3:
                System.out.println("\n ¿Qué operación desea realizar? \n 1: Producto punto \n 2: Suma \n 3: Resta \n" +
-                       " 4: Magnitud\n 0: Si desea SALIR ");
+                       " 4: Magnitud\n 0: Si desea regresar al menú ");
                resp2 = lc.getInteger(msj);
                switch (resp2) {
                    case 1:
@@ -184,7 +180,7 @@ public class Main {
                        }break;
            case 4: //MATRIZ 2X2
                System.out.println("\n ¿Qué operación desea realizar? \n 1: Transpuesta \n 2: Suma \n 3: Resta \n" +
-                       " 4: Inversa\n 5: Multiplicación \n 6: Determinante \n 7: Rotación \n 8: Matriz de rotación \n 9: Identidad \n  0:Si desea SALIR ");
+                       " 4: Inversa\n 5: Multiplicación \n 6: Determinante \n 7: Rotación \n 8: Multiplicación Matriz x Vector \n 9: Identidad \n  0:Si desea si desea regresar al menú ");
                resp2 = lc.getInteger(msj);
                switch (resp2) {
                    case 1:
@@ -248,7 +244,7 @@ public class Main {
                        x2.setC(lc.getDouble(msj));
                        x2.setD(lc.getDouble(msj));
                        x2.determinante();break;
-                   case 7:  System.out.println("Introduzca su valor en grados que desea su matriz de rotación");
+                   case 7:  System.out.println("Introduzca su valor en radianes que desea su matriz de rotación");
                        double s = lc.getDouble(msj);
                        x2.rot(s);break;
                    case 8:  System.out.println("Introduzca datos por fila");
@@ -264,114 +260,115 @@ public class Main {
                    case 0: break;
                        }break;
            case 5:    System.out.println("\n ¿Qué operación desea realizar? \n 1: Transpuesta \n 2: Suma \n 3: Resta \n" +
-                   " 4: Multiplicación\n 5: Determinante \n 6: Rotación en x\n 7: Rotación en y \n 8: Rotación en z \n 9: Identidad \n 0:Si desea SALIR ");
+                   " 4: Multiplicación\n 5: Determinante \n 6: Rotación en x\n 7: Rotación en y \n 8: Rotación en z \n 9: Identidad \n 0:Si desea regresar al menú ");
                resp2 = lc.getInteger(msj);
 
                switch (resp2) {
                    case 1:
                        System.out.println("Introduzca datos de su matriz por filas");
-                       x3.setA(lc.getDouble(msj));
-                       x3.setB(lc.getDouble(msj));
-                       x3.setC(lc.getDouble(msj));
-                       x3.setD(lc.getDouble(msj));
-                       x3.setA2(lc.getDouble(msj));
-                       x3.setB2(lc.getDouble(msj));
-                       x3.setC2(lc.getDouble(msj));
-                       x3.setE(lc.getDouble(msj));
-                       x3.setF(lc.getDouble(msj));
+                       x3.setM11(lc.getDouble(msj));
+                       x3.setM12(lc.getDouble(msj));
+                       x3.setM13(lc.getDouble(msj));
+                       x3.setM21(lc.getDouble(msj));
+                       x3.setM22(lc.getDouble(msj));
+                       x3.setM23(lc.getDouble(msj));
+                       x3.setM31(lc.getDouble(msj));
+                       x3.setM32(lc.getDouble(msj));
+                       x3.setM33(lc.getDouble(msj));
                        x3.transpuesta();break;
                    case 2:
                        System.out.println("Introduzca datos de su primera matriz por fila");
-                       x3.setA(lc.getDouble(msj));
-                       x3.setB(lc.getDouble(msj));
-                       x3.setC(lc.getDouble(msj));
-                       x3.setD(lc.getDouble(msj));
-                       x3.setA2(lc.getDouble(msj));
-                       x3.setB2(lc.getDouble(msj));
-                       x3.setC2(lc.getDouble(msj));
-                       x3.setE(lc.getDouble(msj));
-                       x3.setF(lc.getDouble(msj));
+                       x3.setM11(lc.getDouble(msj));
+                       x3.setM12(lc.getDouble(msj));
+                       x3.setM13(lc.getDouble(msj));
+                       x3.setM21(lc.getDouble(msj));
+                       x3.setM22(lc.getDouble(msj));
+                       x3.setM23(lc.getDouble(msj));
+                       x3.setM31(lc.getDouble(msj));
+                       x3.setM32(lc.getDouble(msj));
+                       x3.setM33(lc.getDouble(msj));
                        System.out.println("Introduzca datos de su segunda matriz");
-                       y3.setA(lc.getDouble(msj));
-                       y3.setB(lc.getDouble(msj));
-                       y3.setC(lc.getDouble(msj));
-                       y3.setD(lc.getDouble(msj));
-                       y3.setA2(lc.getDouble(msj));
-                       y3.setB2(lc.getDouble(msj));
-                       y3.setC2(lc.getDouble(msj));
-                       y3.setE(lc.getDouble(msj));
-                       y3.setF(lc.getDouble(msj));
+                       y3.setM11(lc.getDouble(msj));
+                       y3.setM12(lc.getDouble(msj));
+                       y3.setM13(lc.getDouble(msj));
+                       y3.setM21(lc.getDouble(msj));
+                       y3.setM22(lc.getDouble(msj));
+                       y3.setM23(lc.getDouble(msj));
+                       y3.setM31(lc.getDouble(msj));
+                       y3.setM32(lc.getDouble(msj));
+                       y3.setM33(lc.getDouble(msj));
                        x3.suma(y3);break;
                    case 3: System.out.println("Introduzca datos de su primera matriz por fila");
-                       x3.setA(lc.getDouble(msj));
-                       x3.setB(lc.getDouble(msj));
-                       x3.setC(lc.getDouble(msj));
-                       x3.setD(lc.getDouble(msj));
-                       x3.setA2(lc.getDouble(msj));
-                       x3.setB2(lc.getDouble(msj));
-                       x3.setC2(lc.getDouble(msj));
-                       x3.setE(lc.getDouble(msj));
-                       x3.setF(lc.getDouble(msj));
+                       x3.setM11(lc.getDouble(msj));
+                       x3.setM12(lc.getDouble(msj));
+                       x3.setM13(lc.getDouble(msj));
+                       x3.setM21(lc.getDouble(msj));
+                       x3.setM22(lc.getDouble(msj));
+                       x3.setM23(lc.getDouble(msj));
+                       x3.setM31(lc.getDouble(msj));
+                       x3.setM32(lc.getDouble(msj));
+                       x3.setM33(lc.getDouble(msj));
                        System.out.println("Introduzca datos de su segunda matriz");
-                       y3.setA(lc.getDouble(msj));
-                       y3.setB(lc.getDouble(msj));
-                       y3.setC(lc.getDouble(msj));
-                       y3.setD(lc.getDouble(msj));
-                       y3.setA2(lc.getDouble(msj));
-                       y3.setB2(lc.getDouble(msj));
-                       y3.setC2(lc.getDouble(msj));
-                       y3.setE(lc.getDouble(msj));
-                       y3.setF(lc.getDouble(msj));
+                       y3.setM11(lc.getDouble(msj));
+                       y3.setM12(lc.getDouble(msj));
+                       y3.setM13(lc.getDouble(msj));
+                       y3.setM21(lc.getDouble(msj));
+                       y3.setM22(lc.getDouble(msj));
+                       y3.setM23(lc.getDouble(msj));
+                       y3.setM31(lc.getDouble(msj));
+                       y3.setM32(lc.getDouble(msj));
+                       y3.setM33(lc.getDouble(msj));
                        x3.resta(y3);break;
                    case 4:  System.out.println("Introduzca datos de su primera matriz por fila");
-                       x3.setA(lc.getDouble(msj));
-                       x3.setB(lc.getDouble(msj));
-                       x3.setC(lc.getDouble(msj));
-                       x3.setD(lc.getDouble(msj));
-                       x3.setA2(lc.getDouble(msj));
-                       x3.setB2(lc.getDouble(msj));
-                       x3.setC2(lc.getDouble(msj));
-                       x3.setE(lc.getDouble(msj));
-                       x3.setF(lc.getDouble(msj));
+                       x3.setM11(lc.getDouble(msj));
+                       x3.setM12(lc.getDouble(msj));
+                       x3.setM13(lc.getDouble(msj));
+                       x3.setM21(lc.getDouble(msj));
+                       x3.setM22(lc.getDouble(msj));
+                       x3.setM23(lc.getDouble(msj));
+                       x3.setM31(lc.getDouble(msj));
+                       x3.setM32(lc.getDouble(msj));
+                       x3.setM33(lc.getDouble(msj));
                        System.out.println("Introduzca datos de su segunda matriz");
-                       y3.setA(lc.getDouble(msj));
-                       y3.setB(lc.getDouble(msj));
-                       y3.setC(lc.getDouble(msj));
-                       y3.setD(lc.getDouble(msj));
-                       y3.setA2(lc.getDouble(msj));
-                       y3.setB2(lc.getDouble(msj));
-                       y3.setC2(lc.getDouble(msj));
-                       y3.setE(lc.getDouble(msj));
-                       y3.setF(lc.getDouble(msj));
+                       y3.setM11(lc.getDouble(msj));
+                       y3.setM12(lc.getDouble(msj));
+                       y3.setM13(lc.getDouble(msj));
+                       y3.setM21(lc.getDouble(msj));
+                       y3.setM22(lc.getDouble(msj));
+                       y3.setM23(lc.getDouble(msj));
+                       y3.setM31(lc.getDouble(msj));
+                       y3.setM32(lc.getDouble(msj));
+                       y3.setM33(lc.getDouble(msj));
                        x3.mult(y3);break;
                    case 5: System.out.println("Introduzca datos de su matriz por filas");
-                       x3.setA(lc.getDouble(msj));
-                       x3.setB(lc.getDouble(msj));
-                       x3.setC(lc.getDouble(msj));
-                       x3.setD(lc.getDouble(msj));
-                       x3.setA2(lc.getDouble(msj));
-                       x3.setB2(lc.getDouble(msj));
-                       x3.setC2(lc.getDouble(msj));
-                       x3.setE(lc.getDouble(msj));
-                       x3.setF(lc.getDouble(msj));
+                       x3.setM11(lc.getDouble(msj));
+                       x3.setM12(lc.getDouble(msj));
+                       x3.setM13(lc.getDouble(msj));
+                       x3.setM21(lc.getDouble(msj));
+                       x3.setM22(lc.getDouble(msj));
+                       x3.setM23(lc.getDouble(msj));
+                       x3.setM31(lc.getDouble(msj));
+                       x3.setM32(lc.getDouble(msj));
+                       x3.setM33(lc.getDouble(msj));
                        x3.determinante();break;
-                   case 6: System.out.println("Introduzca su valor en grados que desea su matriz de rotación");
+                   case 6: System.out.println("Introduzca su valor en radianes que desea su matriz de rotación");
                        double alpha=lc.getDouble(msj);
                        x3.rotX(alpha);
                        break;
 
-                   case 7:System.out.println("Introduzca su valor en grados que desea su matriz de rotación");
+                   case 7:System.out.println("Introduzca su valor en radianes que desea su matriz de rotación");
                         alpha =lc.getDouble(msj);
                        x3.rotY(alpha);break;
 
-                   case 8: System.out.println("Introduzca su valor en grados que desea su matriz de rotación");
+                   case 8: System.out.println("Introduzca su valor en radianes que desea su matriz de rotación");
                        alpha =lc.getDouble(msj);
                        x3.rotZ(alpha); break;
+                   case 9: x3.identidad();break;
                    case 0:  break;
 
                }break;
            case 6:  System.out.println("\n ¿Qué operación desea realizar? \n 1: Transpuesta \n 2: Suma \n 3: Resta \n" +
-                   " 4: Multiplicación \n 5: Rotación en x\n 6: Rotación en y \n 7: Rotación en z \n 8: Identidad \n 0:Si desea SALIR ");
+                   " 4: Multiplicación \n 5: Rotación en x\n 6: Rotación en y \n 7: Rotación en z \n 8: Identidad \n 9: Determinante \n 0:Si desea regresar al menú ");
                resp2 = lc.getInteger(msj);
 
                switch (resp2) {
@@ -503,22 +500,41 @@ public class Main {
                        y4.setM44(lc.getDouble(msj));
                        x4.mult(y4);break;
                    case 5:
-                       System.out.println("Introduzca su valor en grados que desea su matriz de rotación");
+                       System.out.println("Introduzca su valor en radianes que desea su matriz de rotación");
                        double alpha=lc.getDouble(msj);
                        x4.rotX(alpha); break;
                    case 6:
-                       System.out.println("Introduzca su valor en grados que desea su matriz de rotación");
+                       System.out.println("Introduzca su valor en radianes que desea su matriz de rotación");
                      alpha=lc.getDouble(msj);
                        x4.rotY(alpha); break;
                    case 7:
-                       System.out.println("Introduzca su valor en grados que desea su matriz de rotación");
+                       System.out.println("Introduzca su valor en radianes que desea su matriz de rotación");
                       alpha=lc.getDouble(msj);
                        x4.rotX(alpha); break;
                    case 8:
                        x4.identidad();
+                   case 9:  System.out.println("Introduzca los datos de matriz por filas");
+                       x4.setM11(lc.getDouble(msj));
+                       x4.setM12(lc.getDouble(msj));
+                       x4.setM13(lc.getDouble(msj));
+                       x4.setM14(lc.getDouble(msj));
+                       x4.setM21(lc.getDouble(msj));
+                       x4.setM22(lc.getDouble(msj));
+                       x4.setM23(lc.getDouble(msj));
+                       x4.setM24(lc.getDouble(msj));
+                       x4.setM31(lc.getDouble(msj));
+                       x4.setM32(lc.getDouble(msj));
+                       x4.setM33(lc.getDouble(msj));
+                       x4.setM34(lc.getDouble(msj));
+                       x4.setM41(lc.getDouble(msj));
+                       x4.setM42(lc.getDouble(msj));
+                       x4.setM43(lc.getDouble(msj));
+                       x4.setM44(lc.getDouble(msj));
+                       x4.determinante();
     }break;
 }
     }while(resp1!=0);
+        System.out.println("\nPrograma finalizado");
     }
 }
 

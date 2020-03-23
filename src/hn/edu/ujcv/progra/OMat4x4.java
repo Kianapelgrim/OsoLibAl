@@ -220,33 +220,42 @@ public class OMat4x4 {
         //
         //  m11   =  a.m11 * b.m11 + a.m12 * b.m21
         //  m12   =  a.m11 * b.m12 + a.m12 * b.m22
-       m11= this.m11 * b.m11 + this.m12 * b.m21 + this.m13 * b.m31 + this.m14 * b.m41;
-       m12= this.m11 * b.m12 + this.m12 * b.m22 + this.m13 * b.m32 + this.m14 * b.m42;
-       m13= this.m11 * b.m13 + this.m12 * b.m23 + this.m13 * b.m33 + this.m14 * b.m43;
-       m14= this.m11 * b.m14 + this.m12 * b.m24 + this.m13 * b.m34 + this.m14 * b.m44;
-       m21= this.m21 * b.m11 + this.m22 * b.m21 + this.m23 * b.m31 + this.m24 * b.m41;
-       m22= this.m21 * b.m12 + this.m22 * b.m22 + this.m23 * b.m32 + this.m24 * b.m42;
-       m23= this.m21 * b.m13 + this.m22 * b.m23 + this.m23 * b.m33 + this.m24 * b.m43;
-       m24= this.m21 * b.m14 + this.m22 * b.m24 + this.m23 * b.m34 + this.m24 * b.m44;
-       m31= this.m31 * b.m11 + this.m32 * b.m21 + this.m33 * b.m31 + this.m34 * b.m41;
-       m32= this.m31 * b.m12 + this.m32 * b.m22 + this.m33 * b.m32 + this.m34 * b.m42;
-       m33= this.m31 * b.m13 + this.m32 * b.m23 + this.m33 * b.m33 + this.m34 * b.m43;
-       m34= this.m31 * b.m14 + this.m32 * b.m24 + this.m33 * b.m34 + this.m34 * b.m44;
-       m41= this.m41 * b.m11 + this.m42 * b.m21 + this.m43 * b.m31 + this.m44 * b.m41;
-       m42= this.m41 * b.m12 + this.m42 * b.m22 + this.m43 * b.m32 + this.m44 * b.m42;
-       m43= this.m41 * b.m13 + this.m42 * b.m23 + this.m43 * b.m33 + this.m44 * b.m43;
-       m44= this.m41 * b.m14 + this.m42 * b.m24 + this.m43 * b.m34 + this.m44 * b.m44;
-        System.out.println(m11+ "\t" +m12+ "\t"+ m13+ "\t" + m14+"\n" +
-                m21+"\t"+ m22+"\t"+ m23+"\t"+m24+"\n" +
-                m31+"\t"+ m32+"\t"+ m33+"\t"+m34+"\n" +
-                m41+"\t"+ m42+"\t"+ m43+"\t"+ m44);
+       double m11z= this.m11 * b.m11 + this.m12 * b.m21 + this.m13 * b.m31 + this.m14 * b.m41;
+       double m12z= this.m11 * b.m12 + this.m12 * b.m22 + this.m13 * b.m32 + this.m14 * b.m42;
+       double m13z= this.m11 * b.m13 + this.m12 * b.m23 + this.m13 * b.m33 + this.m14 * b.m43;
+       double m14z= this.m11 * b.m14 + this.m12 * b.m24 + this.m13 * b.m34 + this.m14 * b.m44;
+       double m21z= this.m21 * b.m11 + this.m22 * b.m21 + this.m23 * b.m31 + this.m24 * b.m41;
+       double m22z= this.m21 * b.m12 + this.m22 * b.m22 + this.m23 * b.m32 + this.m24 * b.m42;
+       double m23z= this.m21 * b.m13 + this.m22 * b.m23 + this.m23 * b.m33 + this.m24 * b.m43;
+       double m24z= this.m21 * b.m14 + this.m22 * b.m24 + this.m23 * b.m34 + this.m24 * b.m44;
+       double m31z= this.m31 * b.m11 + this.m32 * b.m21 + this.m33 * b.m31 + this.m34 * b.m41;
+       double m32z= this.m31 * b.m12 + this.m32 * b.m22 + this.m33 * b.m32 + this.m34 * b.m42;
+       double m33z= this.m31 * b.m13 + this.m32 * b.m23 + this.m33 * b.m33 + this.m34 * b.m43;
+       double m34z= this.m31 * b.m14 + this.m32 * b.m24 + this.m33 * b.m34 + this.m34 * b.m44;
+       double m41z= this.m41 * b.m11 + this.m42 * b.m21 + this.m43 * b.m31 + this.m44 * b.m41;
+       double m42z= this.m41 * b.m12 + this.m42 * b.m22 + this.m43 * b.m32 + this.m44 * b.m42;
+       double m43z= this.m41 * b.m13 + this.m42 * b.m23 + this.m43 * b.m33 + this.m44 * b.m43;
+       double m44z= this.m41 * b.m14 + this.m42 * b.m24 + this.m43 * b.m34 + this.m44 * b.m44;
+        System.out.println(m11z+ "\t" +m12z+ "\t"+ m13z+ "\t" + m14z+"\n" +
+                m21z+"\t"+ m22z+"\t"+ m23z+"\t"+m24z+"\n" +
+                m31z+"\t"+ m32z+"\t"+ m33z+"\t"+m34z+"\n" +
+                m41z+"\t"+ m42z+"\t"+ m43z+"\t"+ m44z);
     }
 
 
     public void determinante() {
         //TODO: implementar
-        double det = m11*(m22*(m33*m44-m34*m43)-m23*(m32*m44-m34*m42)+ m24*(m43*m32-m42*m33)- m12*(m21*(m33*m44-m34*m43)-m23*(m32*m44-m34*m42)+ m24*(m43*m32-m42*m43)));
+        // m11 m12 m13 m14
+        // m21 m22 m23 m24    m22 m23 m24
+        // m31 m32 m33 m34    m32 m33 m34
+        // m41 m42 m43 m44    m42 m43 m44
+        double det = m11*(m22*((m33*m44)-(m34*m43))-m23*((m32*m44)-(m42*m34))+m24*((m32*m43)-(m42*m33)))-
+                m12*(m21*((m33*m44)-(m43*m34))-m23*((m31*m44)-(m41*m34))+m24*((m31*m43)-(m41*m33)))+
+                m13*(m21*((m32*m44)-(m42*m34))-m22*((m31*m44)-(m41*m34))+m24*((m31*m42)-(m41*m32)))-
+                m14*(m21*((m32*m43)-(m42*m33))-m22*((m31*m43)-(m41*m33))+m23*((m31*m42)-(m41*m32)));
+        System.out.println(det);
     }
+
 
 //m11 m12 m13 m14
 //m21 m22 m23 m24
@@ -278,6 +287,7 @@ System.out.println("1\t0\t0\t0\n0"+ m11+ "\t"+m22+"\t" + "0\n0"+m12+"\t"+m11+"\t
         System.out.println(m11+"\t"+m22+"\t0\t0\n"+m12+"\t"+m11+"\t0\t0\n0\t0\t1\t0\n0\t0\t0\t0\t1");
 
     }
+
 
     public static OMat4x4 rotW(double alpha){
 

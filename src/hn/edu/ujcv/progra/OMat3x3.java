@@ -3,126 +3,125 @@ package hn.edu.ujcv.progra;
 public class OMat3x3 {
     // miembros
 
-    private double a;
-    private double b;
-    private double c;
-    private double d;
-    private double a2;
-    private double b2;
-    private double c2;
-    private double f;
-    private double e;
-
+    private double m11;
+    private double m12;
+    private double m13;
+    private double m21;
+    private double m22;
+    private double m23;
+    private double m31;
+    private double m32;
+    private double m33;
     private LectorDeTeclado lt = new LectorDeTeclado();
 
 
     // accesoras y mutadoras
-    public double getA2() {
-        return a2;
+    public double getM21() {
+        return m21;
     }
 
-    public void setA2(double a2) {
-        this.a2 = a2;
+    public void setM21(double m21) {
+        this.m21 = m21;
     }
 
-    public double getB2() {
-        return b2;
+    public double getM22() {
+        return m22;
     }
 
-    public void setB2(double b2) {
-        this.b2 = b2;
+    public void setM22(double m22) {
+        this.m22 = m22;
     }
 
-    public double getC2() {
-        return c2;
+    public double getM23() {
+        return m23;
     }
 
-    public void setC2(double c2) {
-        this.c2 = c2;
+    public void setM23(double m23) {
+        this.m23 = m23;
     }
 
-    public double getA() {
-        return a;
+    public double getM11() {
+        return m11;
     }
 
-    public void setE(double e) {
-        this.e = e;
+    public void setM32(double m32) {
+        this.m32 = m32;
     }
 
-    public double getE() {
-        return e;
+    public double getM32() {
+        return m32;
     }
 
-    public void setF(double f) {
-        this.f = f;
+    public void setM31(double m31) {
+        this.m31 = m31;
     }
 
-    public double getF() {
-        return f;
+    public double getM31() {
+        return m31;
     }
 
-    public void setA(double a) {
-        this.a = a;
+    public void setM11(double m11) {
+        this.m11 = m11;
     }
 
-    public double getB() {
-        return b;
+    public double getM12() {
+        return m12;
     }
 
-    public void setB(double b) {
-        this.b = b;
+    public void setM12(double m12) {
+        this.m12 = m12;
     }
 
-    public double getC() {
-        return c;
+    public double getM13() {
+        return m13;
     }
 
-    public void setC(double c) {
-        this.c = c;
+    public void setM13(double m13) {
+        this.m13 = m13;
     }
 
-    public double getD() {
-        return d;
+    public double getM33() {
+        return m33;
     }
 
-    public void setD(double d) {
-        this.d = d;
+    public void setM33(double m33) {
+        this.m33 = m33;
     }
     //METODOS
 
     public void transpuesta() {
         //TODO: implementar
-        System.out.println(a + "\t" + d + "\t" + c2 + "\n" + b + "\t" + a2 + "\t" + e + "\n" + c + "\t" + b2 + "\t" + f);
+        System.out.println(m11 + "\t" + m21 + "\t" + m31 + "\n" + m12 + "\t" + m22 + "\t" + m32 + "\n" + m13 + "\t" + m23 + "\t" + m33);
     }
 
 
     public void suma(OMat3x3 z) {
         //TODO: implementar
-        a = a + z.a;
-        b = b + z.b;
-        c = c + z.c;
-        d = d + z.d;
-        a2 = a2 + z.a2;
-        b2 = b2 + z.b2;
-        c2 = c2 + z.c2;
-        e = e + z.e;
-        f = f + z.f;
-        System.out.println(a + "\t" + b + "\t" + c + "\n" + d + "\t" + a2 + "\t" + b2 + "\n" + c2 + "\t" + e + "\t" + f);
+        m11 = m11 + z.m11;
+        m12 = m12 + z.m12;
+        m13 = m13 + z.m13;
+        m33 = m33 + z.m33;
+        m21 = m21 + z.m21;
+        m22 = m22 + z.m22;
+        m23 = m23 + z.m23;
+        m32 = m32 + z.m32;
+        m31 = m31 + z.m31;
+        System.out.println(m11 + "\t" + m12 + "\t" + m13 + "\n" +   + m21 + "\t" + m22 + "\n" + m23 + "\t" + m31 + "\t" + m32 + "\t" +m33);
 
     }
 
     public void resta(OMat3x3 z) {
         //TODO: implementar
-        a = a + z.a;
-        b = b + z.b;
-        c = c + z.c;
-        d = d + z.d;
-        a2 = a2 + z.a2;
-        b2 = b2 + z.b2;
-        c2 = c2 + z.c2;
-        e = e + z.e;
-        f = f + z.f;
-        System.out.println(a + "\t" + b + "\t" + c + "\n" + d + "\t" + a2 + "\t" + b2 + "\n" + c2 + "\t" + e + "\t" + f);
+        m11 = m11 - z.m11;
+        m12 = m12 - z.m12;
+        m13 = m13 - z.m13;
+        m33 = m33 - z.m33;
+        m21 = m21 - z.m21;
+        m22 = m22 - z.m22;
+        m23 = m23 - z.m23;
+        m32 = m32 - z.m32;
+        m31 = m31 - z.m31;
+        System.out.println(m11 + "\t" + m12 + "\t" + m13 + "\n" +   + m21 + "\t" + m22 + "\n" + m23 + "\t" + m31 + "\t" + m32 + "\t" +m33);
 
     }
 
@@ -131,23 +130,23 @@ public class OMat3x3 {
         //   a  b  c
         //   d  a2  b2
         //     c2  e  f
-        a = a * z.a + b * z.d + c * z.c2;
-        b = a * z.b + b * z.a2 + c * z.e;
-        c = a * z.c + b * z.b2 + c * z.f;
-        d = d * z.a + a2 * z.d + b2 * z.c2;
-        a2 = d * z.b + a2 * z.a2 + b2 * z.e;
-        b2 = d * z.c + a2 * z.b2 + b2 * z.f;
-        c2 = c2 * z.a + e * z.d + f * z.c2;
-        e = c2 * z.b + e * z.a2 + f * z.e;
-        f = c2 * z.c + e * z.b2 + f * z.f;
-        System.out.println(a + "\t" + b + "\t" + c + "\n" + d + "\t" + a2 + "\t" + b2 + "\n" + c2 + "\t" + e + "\t" + f);
+        double m11z = (m11 * z.m11) + (m12 * z.m21) + (m13 * z.m31);
+        double m12z = (m11 * z.m21) + (m12 * z.m22) + (m13 * z.m32);
+        double m13z = (m11 * z.m13) + (m12 * z.m23) + (m13 * z.m33);
+        double m21z = (m21 * z.m11) + (m22 * z.m21) + (m23 * z.m31);
+        double m22z = (m21 * z.m12) + (m22 * z.m22) + (m23 * z.m32);
+        double m23z = (m21 * z.m13) + (m22 * z.m23) + (m23 * z.m33);
+        double m31z = (m31 * z.m11) + (m32 * z.m21) + (m33 * z.m31);
+        double m32z = (m31 * z.m12) + (m32 * z.m22) + (m33 * z.m32);
+        double m33z = (m31 * z.m13) + (m32 * z.m23) + (m33 * z.m33);
+        System.out.println(m11z + "\t" + m12z + "\t" + m13z + "\n" + m21z + "\t" + m22z + "\t" + m23z + "\n" + m31z + "\t" + m32z + "\t" +m33z);
 
 
     }
 
     public void determinante() {
         //TODO: implementar
-        double det = ((a * a2 * f) + (b * e * c) + (c2 * b * b2)) - ((c * a2 * c2) + (b2 * e * a) + (f * b * d));
+        double det = m11*((m22*m33)-(m32*m23))-m12*((m21*m33)-(m31*m23))+m13*((m21*m32)-(m31*m22));
         System.out.println(det);
 
     }
@@ -184,28 +183,21 @@ public class OMat3x3 {
     }
 
     public static void identidad(){
+        System.out.println("1\t0\t0\n0\t1\t0\n0\t0\t1");}
 
-
-        //TODO: implementar
-        System.out.println("1\t0\t0\n0\t1\t0\n0\t0\t1");
-    }
-
-    // constructores
-    public OMat3x3(){}
-
-
-public OMat3x3( double a, double b, double c,
-                double d, double a2, double b2,
-                double c2, double e, double f){
-        this.a=a;
-        this.b2=b2;
-        this.b= b;
-        this.a2= a2;
-        this.c=c;
-        this.c2=c2;
-        this.e=e;
-        this.f=f;
-        this.d=d;
+public OMat3x3(){}
+public OMat3x3(double m11, double m12, double m13,
+               double m33, double m21, double m22,
+               double m23, double m32, double m31){
+        this.m11= m11;
+        this.m22 = m22;
+        this.m12 = m12;
+        this.m21 = m21;
+        this.m13 = m13;
+        this.m23 = m23;
+        this.m32 = m32;
+        this.m31 = m31;
+        this.m33 = m33;
 
 
 }

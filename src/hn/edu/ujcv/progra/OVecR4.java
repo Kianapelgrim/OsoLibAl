@@ -57,15 +57,20 @@ public class OVecR4 {
 
     // constructores
     public OVecR4() { }
-
+    public OVecR4(double a, double b, double a2, double b2) {
+        this.a = a;
+        this.a = a2;
+        this.b = b;
+        this.b2 = b2;
+    }
     public OVecR4 (OVecR4 s){
         this.a = s.a;
-        this.a = s.a2;
+        this.a2 = s.a2;
         this.b = s.b;
         this.b2 = s.b2;
     }
 
-    public OVecR4(double a, double a2, double b, double b2){}
+
     @Override
     public String toString() {
         return " {" +
